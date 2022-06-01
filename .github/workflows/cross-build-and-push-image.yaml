@@ -40,7 +40,7 @@ jobs:
         with:
           platforms: linux/ppc64le
           context: .
-          # push via buildx throws error as we are using custom domain "registry.ppc64le" who's mapping is added in /etc/hosts on host
+          # push via buildx throws error as we are using custom domain "registry.ppc64le". mapping for which is added in /etc/hosts on host
           push: false
           load: true
           tags: registry.ppc64le/app:latest
@@ -55,7 +55,7 @@ jobs:
           
       - name: Verify pushed image & k8s access
         run: |
-          docker rm -f registry.ppc64le/app:latest
+          docker rmi -f registry.ppc64le/app:latest
           docker pull registry.ppc64le/app:latest
-          sudo snap install kubectl
+          sudo snap install kubectl --classic
           kubectl get nodes
