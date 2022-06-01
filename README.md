@@ -16,3 +16,7 @@ Github action workflow is defined in [k8s.yaml](./github/workflows/k8s.yaml)
 Following secrets are created in github repo
 
 ![secrets.png](./secrets.png)
+
+#### Github Action Runs
+
+https://github.com/Siddhesh-Ghadi/image-build-github-action/actions/workflows/k8s.yaml
