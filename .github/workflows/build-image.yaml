@@ -17,11 +17,9 @@ jobs:
         uses: docker/setup-buildx-action@v2
           
       - name: Set up access to remote machine
-        #env:
-        #  PPC64LE_SSH_KEY: ${{ secrets.PPC64LE_SSH_KEY }}
         run: |
           set -e
-          cat ${{ secrets.PPC64LE_SSH_KEY }} > /tmp/sshkey
+          echo ${{ secrets.PPC64LE_SSH_KEY }} > /tmp/sshkey
           chmod 600 /tmp/sshkey
           eval `ssh-agent -s`
           ssh-add sshkey
