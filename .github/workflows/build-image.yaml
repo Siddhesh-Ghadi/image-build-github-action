@@ -20,7 +20,8 @@ jobs:
         run: |
           set -e
           echo ${{ secrets.PPC64LE_SSH_KEY }} > /tmp/sshkey
-          chmod 600 /tmp/sshkey
+          which chmod
+          #chmod 600 /tmp/sshkey
           #eval `ssh-agent -s`
           #ssh-add sshkey
           #scp -o MACs=hmac-sha2-256 -o StrictHostKeyChecking=no -oLogLevel=ERROR -o UserKnownHostsFile=/dev/null root@PPC64LE_VM_IP:/opt/setup-access.sh /tmp
