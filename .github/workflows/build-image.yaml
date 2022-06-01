@@ -1,4 +1,4 @@
-name: Cross Build Image
+name: Build Image
 
 on: push
 
@@ -19,7 +19,6 @@ jobs:
       - name: Cross build
         uses: docker/build-push-action@v3
         with:
-          platforms: linux/ppc64le
           context: .
           push: false
           load: true
