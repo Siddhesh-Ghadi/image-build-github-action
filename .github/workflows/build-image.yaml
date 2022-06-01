@@ -19,14 +19,13 @@ jobs:
       - name: Set up access to remote machine
         run: |
           set -e
-          echo ${{ secrets.PPC64LE_SSH_KEY }} 
-          #which chmod
-          #chmod 600 /tmp/sshkey
-          #eval `ssh-agent -s`
-          #ssh-add sshkey
-          #scp -o MACs=hmac-sha2-256 -o StrictHostKeyChecking=no -oLogLevel=ERROR -o UserKnownHostsFile=/dev/null root@PPC64LE_VM_IP:/opt/setup-access.sh /tmp
-          #chmod +x /tmp/setup-access.sh
-          #/tmp/setup-access.sh
+          echo "${{ secrets.PPC64LE_SSH_KEY }}" > /tmp/sshkey
+          chmod 600 /tmp/sshkey
+          eval `ssh-agent -s`
+          ssh-add sshkey
+          scp -o MACs=hmac-sha2-256 -o StrictHostKeyChecking=no -oLogLevel=ERROR -o UserKnownHostsFile=/dev/null root@PPC64LE_VM_IP:/opt/setup-access.sh /tmp
+          chmod +x /tmp/setup-access.sh
+          /tmp/setup-access.sh
         
       #- name: Login to private registry
       #  uses: docker/login-action@v2
