@@ -53,3 +53,9 @@ jobs:
         run: |
           docker push registry.ppc64le/app:latest
           
+      - name: Verify pushed image & k8s access
+        run: |
+          docker rm -f registry.ppc64le/app:latest
+          docker pull registry.ppc64le/app:latest
+          sudo snap install kubectl
+          kubectl get nodes
