@@ -1,4 +1,4 @@
-# Workflow Cross Build Image & Deploy On Remote K8s
+## Cross Build Image & Deploy On Remote K8s Using Github Actions
 
 Github action workflow to prform a cross build of a `ppc64le` image using buildx in github action and deploy it onto a remote `ppc64le` kubernetes cluster in IBM cloud.
 
