@@ -39,7 +39,7 @@ jobs:
         run: |
           docker ps -a
           sudo cat /etc/hosts
-          ip addr
+          ip addr 
           
       - name: Build and push
         uses: docker/build-push-action@v3
