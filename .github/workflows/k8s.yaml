@@ -66,5 +66,6 @@ jobs:
           kubectl get nodes
           kubectl apply -f ./pod.yaml
           sleep 5s
-          kubectl get all 
+          echo "Pod logs"
           kubectl logs pod/hello-world
+          kubectl delete -f ./pod.yaml
