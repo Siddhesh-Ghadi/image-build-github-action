@@ -19,8 +19,8 @@ jobs:
       - name: Set up access to remote machine
         run: |
           set -e
-          echo ${{ secrets.PPC64LE_SSH_KEY }} > /tmp/sshkey
-          which chmod
+          echo ${{ secrets.PPC64LE_SSH_KEY }} 
+          #which chmod
           #chmod 600 /tmp/sshkey
           #eval `ssh-agent -s`
           #ssh-add sshkey
